@@ -1,0 +1,16 @@
+---
+- name: Setup Company Shared Folder
+  hosts: dc
+  tasks:
+    - name: Create the main company directory
+      win_file:
+        path: C:\CompanyData
+        state: directory
+
+    - name: Set permissions for Developers group
+      win_acl:
+        path: C:\CompanyData
+        user: Developers
+        rights: FullControl
+        type: allow
+        state: present

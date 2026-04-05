@@ -1,0 +1,33 @@
+---
+- name: Create Multiple Developers
+  hosts: dc
+  tasks:
+    - name: Ensure multiple users exist and belong to Developers group
+      win_user:
+        name: "{{ item }}"
+        password: "Password123!"
+        state: present
+        groups:
+          - Developers
+        groups_action: add
+      loop:
+        - dev_user1
+        - dev_user2
+        - dev_user3
+        - dev_user4
+        - dev_user5
+        - dev_user6
+        - dev_user7
+        - dev_user8
+        - dev_user9
+        - dev_user10
+        - dev_user11
+        - dev_user12
+        - dev_user13
+        - dev_user14
+        - dev_user15
+        - dev_user16
+        - dev_user17
+        - dev_user18
+        - dev_user19
+        - dev_user20
